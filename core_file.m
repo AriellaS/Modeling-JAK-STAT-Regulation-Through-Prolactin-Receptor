@@ -58,7 +58,6 @@ mBCLn = y(54);
 mBCLc = y(55);
 BCL = y(56);
 
-
 % Specify Parameter names
 k1 = params(1);
 k2 = params(2);
@@ -122,8 +121,6 @@ k33 = params(59);
 k34 = params(60);
 k35 = params(61);
 
-
-
 %Specify ODEs
 dydt(1,1) = (k_2*PRLRJ - k2*PRL*RJ)*1.39E-4; % Adjusted for volume of cell to volume of cytoplasm ratio
 dydt(2,1) = k1 + k_2*PRLRJ - k2*PRL*RJ - k3*PRLRJ*RJ + k_3*PRLRJ2 - kdeg*RJ + k29*Rc;
@@ -182,5 +179,5 @@ dydt(54,1) = k30a*(pS5AnpS5An + pS5AnpS5Bn + pS5BnpS5Bn)/(k30b+(pS5AnpS5An + pS5
 dydt(55,1) = k31*mBCLn.*Vratio - k32*mBCLc;
 dydt(56,1) = k33*mBCLc - k34*BCL + k35;
 
-end
 
+end
