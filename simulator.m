@@ -64,7 +64,7 @@ function result = simulator(predTime,options,params,initvalues,samples,n)
 
 	% Create results matrix
 	result = predConc;
-    result(:,57) = total_pStatA;
+	result(:,57) = total_pStatA;
 	result(:,58) = total_pStatB;
 	result(:,59) = nucleus_cyto_ratioA;
 	result(:,60) = nucleus_cyto_ratioB;
