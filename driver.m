@@ -136,15 +136,14 @@ options = odeset('RelTol',1e-9,'AbsTol',1e-12,'NonNegative',[1:length(initvalues
 % Set runtime
 predTime = [0:60:24*3600];
 
-% creates a matrix where each row is a sample and each column is a nonzero init value
-samples = zeros(n_samples, 6);
-for n = 1 : n_samples
-	samples(n,1) = random(initvalues(1,1));
-	samples(n,2) = random(initvalues(2,1));
-	samples(n,3) = random(initvalues(5,1));
-	samples(n,4) = random(initvalues(6,1));
-	samples(n,5) = random(initvalues(7,1));
-	samples(n,6) = random(initvalues(56,1));
+% creates a matrix where each row is a sample and each column is a nonzero init value varied over log uniform distributation
+inputs = [2, 5, 6, 7, 56];
+n_inputs = length(inputs);
+samples = zeros(n_samples, n_inputs);
+
+for input = 1: n_inputs
+	x = initvalues(inputs(input));
+	samples(:, input) = random(x, n_samples);
 end
 
 % simulate the model

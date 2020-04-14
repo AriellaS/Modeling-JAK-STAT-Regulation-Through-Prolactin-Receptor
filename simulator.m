@@ -1,12 +1,11 @@
 function result = simulator(predTime,options,params,initvalues,samples,n)
 
 	% assign free variables back to initvalues
-	initvalues(1,1) = samples(n,1);
-	initvalues(2,1) = samples(n,2);
-	initvalues(5,1) = samples(n,3);
-	initvalues(6,1) = samples(n,4);
-	initvalues(7,1) = samples(n,5);
-	initvalues(56,1) = samples(n,6);
+	initvalues(2,1) = samples(n,1);
+	initvalues(5,1) = samples(n,2);
+	initvalues(6,1) = samples(n,3);
+	initvalues(7,1) = samples(n,4);
+	initvalues(56,1) = samples(n,5);
 
 	% Assign variable names for calculated quantities
 	kdeg = params(10,1);
